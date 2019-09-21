@@ -4,7 +4,7 @@ A system to write Markdown and have it published and hosted via [Cloudflare Work
 
 ## Pre-requisites ## 
 * Python 3
-* Install `wrangler` [from here](https://github.com/cloudflare/wrangler)
+* Install [`wrangler`](https://github.com/cloudflare/wrangler)
 * virtualenv
 
 ## Usage ##
