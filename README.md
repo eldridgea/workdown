@@ -11,6 +11,7 @@ A system to write Markdown and have it published and hosted via [Cloudflare Work
 1. `git clone` this repository
 2. cd into the directory
 3. Configure wrangler.toml with your Cloudflare details, make sure your route ends in a wildcard e.g. `route = "https://example.com/*".`
+4. Create a KV Namespace and bind in to `pages` in your `wrangler.toml` file.
 4. Start a python virtualenv `python3 -m venv .env`
 5. Enter the virtualenv `source .env/bin/activate`
 6. Install dependences `pip install -r requirements.txt`
