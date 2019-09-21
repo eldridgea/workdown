@@ -1,3 +1,9 @@
+
+#Badabing Badabom#
+
+This is a test of my workers script
+
+
 I've gotten used to having `freeipa-client` available in `dnf` or `apt` repos, so I've rarely setup clients manually. However, I did today in [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) on my Raspberry Pi. I wanted to document it here mainly for my own memory. It was extremely straightforward but there were a couple tweaks needed. (In this doc "example.com" replaces my domain).
 
 On the Pi install sssd, libnss-sss, libpam-sss, openssh-server krb5-user, and krb5-config.
