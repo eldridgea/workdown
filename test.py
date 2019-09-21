@@ -26,7 +26,7 @@ def push_html_to_kv():
     for filepath in html_filepaths:
         filename = splitext(basename(filepath))[0]
         #bash$ wrangler kv:key put --binding=pages "index" "$html"
-        return_code = subprocess.run(['wrangler kv:key put --binding=pages "index" "$(cat ' + filepath + ')"'], shell=True)
+        return_code = subprocess.run(['wrangler kv:key put --binding=pages ' + filename + ' "$(cat ' + filepath + ')"'], shell=True)
         print(return_code)
         #system('wrangler kv:key put --binding=pages "index" "$(cat ' + filepath + ')"')
 

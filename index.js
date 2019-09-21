@@ -18,10 +18,14 @@ async function rawHtmlResponse(html) {
 }
 
 async function handleRequest(request) {
-  console.log('Got request', request)
-  const response = await fetch(request)
-  console.log('Got response', response)
-  const getCache = () => pages.get('index');
+  const url = request.url;
+  var removeHttp = url.slice(url.indexOf("//") + 2); //removes everything before the doubleslash, e.g. http://
+  var page_name = removeHttp.slice(removeHttp.indexOf("/") + 1); //removes everything before the slash
+  if (page_name === "") {
+    //if page name not supplied, set to "index"
+    var page_name = 'index';
+  }
+  const getCache = () => pages.get(page_name);
   const page = await getCache();
   return rawHtmlResponse(page)
 }
