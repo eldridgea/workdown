@@ -24,9 +24,17 @@ async function handleRequest(request) {
   if (page_name === "") {
     //if page name not supplied, set to "index"
     var page_name = 'index';
+    var getCache = () => pages.get(page_name);
+    var page = await getCache();
+  } else if (page_name.startsWith("assets/")) {
+    //gets from assets namespace if example.com/assets/$PATHs
+    var removeAssets = page_name.slice(url.indexOf("/") + 1)
+    var getCache = () => assets.get(removeAssets);
+    var page = await getCache();
+  } else {
+    var getCache = () => pages.get(page_name);
+    var page = await getCache();
   }
-  const getCache = () => pages.get(page_name);
-  const page = await getCache();
   return rawHtmlResponse(page)
 }
 

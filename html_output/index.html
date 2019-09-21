@@ -1,3 +1,9 @@
+<html>
+<head>
+    <title>Workdown Sandbox</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
 <h1>Badabing Badabom</h1>
 <p>This is a test of my workers script</p>
 <p>I've gotten used to having <code>freeipa-client</code> available in <code>dnf</code> or <code>apt</code> repos, so I've rarely setup clients manually. However, I did today in <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a> on my Raspberry Pi. I wanted to document it here mainly for my own memory. It was extremely straightforward but there were a couple tweaks needed. (In this doc "example.com" replaces my domain).</p>
@@ -37,4 +43,5 @@ homedir_substring = /home</p>
 <p>[pac]
 ```</p>
 <p>Then, in FreeIPA's web interface, I went to Authentication &gt; Certificates and open up <code>CN=Certificate Authority,O=EXAMPLE.COM</code> (serial number 1 in my case), copied the certificate value, and pasted it into /etc/ipa/ca.crt on my Pi.</p>
-<p>I then opened /etc/ssh/sshd_config and changed <code>GSSAPIAuthentication</code> to "yes". Once I restarted SSSD and SSH, everything worked like a charm</p>
+<p>I then opened /etc/ssh/sshd_config and changed <code>GSSAPIAuthentication</code> to "yes". Once I restarted SSSD and SSH, everything worked like a charm</p></body>
+</html>
