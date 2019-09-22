@@ -19,5 +19,12 @@ A system to write Markdown and have it published and hosted via [Cloudflare Work
 8. Run `python workdown.py`
 9. Done!
 
+## Assets ##
+Text-based assets, e.g. CSS, javascript, etc should go in the `assets/` directory. They will be available as their full filename under `assets`. For example if you make `main.css`, it will be `example.com/assets/main.css`
+
+## Partials ##
+Here is where you can customize the header and footer of pages in HTML. Currently all partials apply to all pages generated. Good things to do here would be if you have a static CSS file in `assets/` or would like to include a a fonts CDN, add it into the `<head>` in the `assets/header.html` so it will be usable on your pages.
+
 ## Notes ##
-The path will be the name of the markdown file with no extension. For example if you make `contact.md`, it will be `example.com/contact`.
+The path for content will be the name of the markdown file with no extension. For example if you make `contact.md`, it will be `example.com/contact`.
+
