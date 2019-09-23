@@ -39,14 +39,14 @@ def push_html_to_kv():
     for filepath in html_filepaths:
         filename = splitext(basename(filepath))[0]
         return_code = subprocess.run(['wrangler kv:key put --binding=pages ' + filename + ' "$(cat ' + filepath + ')"'], shell=True)
-        print(return_code)
+        return return_code
 
-def push_assets_to_kv():
-    assets_filepaths = glob.glob("assets/*")
-    for filepath in assets_filepaths:
+def push_css_to_kv():
+    css_filepaths = glob.glob("css/*")
+    for filepath in css_filepaths:
         filename = basename(filepath)
-        return_code = subprocess.run(['wrangler kv:key put --binding=assets ' + filename + ' "$(cat ' + filepath + ')"'], shell=True)
-        print(return_code)
+        return_code = subprocess.run(['wrangler kv:key put --binding=css ' + filename + ' "$(cat ' + filepath + ')"'], shell=True)
+        return return_code
 
 def get_partials():
     global header
@@ -54,12 +54,17 @@ def get_partials():
     header = open("partials/header.html", "rb").read()
     footer = open("partials/footer.html", "rb").read()
 
+def publish_worker():
+    return_code = subprocess.run(['wrangler publish'], shell=True)
+    return return_code
+
 def main():
     """ Main entry point of the app """
     get_partials()
     convert_markdown_files_to_html(header, footer)
-    push_html_to_kv()
-    push_assets_to_kv()
+    print(push_html_to_kv())
+    print(push_css_to_kv())
+    print(publish_worker())
 
 if __name__ == "__main__":
     """ This is executed when run from the command line """
