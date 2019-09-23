@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="workdown",
-    version="0.0.3",
+    version="0.0.4",
     author="Eldridge Alexander",
     author_email="eldridgea@gmail.com",
     description="Write Markdown and have it published and hosted on Cloudflare Workers",
