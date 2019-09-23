@@ -1,6 +1,0 @@
-account_id = ""
-name = "workdown"
-type = "javascript"
-route = ""
-workers_dev = false
-zone_id = ""
