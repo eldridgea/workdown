@@ -7,7 +7,7 @@ A system to write Markdown and have it published and hosted via [Cloudflare Work
 * Install [`wrangler`](https://github.com/cloudflare/wrangler)
 
 ## Usage
-1. `pip3 install workdown`
+1. Run `pip3 install workdown`
 2. Run `wrangler generate --type="javascript" site https://github.com/eldridgea/workdown-example-site`. This will generate a folder called `site` containing the folder structure `workdown` requires to work.
 3. Configure wrangler.toml with your Cloudflare details, make sure your route ends in a wildcard e.g. `route = "https://example.com/*"` and you have `workers_dev = false`.
 4. Run `wrangler kv:namespace create pages` and `wrangler kv:namespace create css` and paste the bindings into your `wrangler.toml`.
