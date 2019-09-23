@@ -21,7 +21,7 @@ setuptools.setup(
     python_requires='>=3.6',
         entry_points={
         'console_scripts': [
-            'workdown = workdown.workdown:get_partials'
+            'workdown = workdown.workdown:main'
         ]
     },
 )
