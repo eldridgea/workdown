@@ -10,11 +10,12 @@ A system to write Markdown and have it published and hosted via [Cloudflare Work
 1. Run `pip3 install workdown`
 2. Run `wrangler config` and configure with your Cloudflare credentials
 3. Run `wrangler generate --type="javascript" site https://github.com/eldridgea/workdown-example-site`. This will generate a folder called `site` containing the folder structure `workdown` requires to work.
-4. Configure `wrangler.toml` with your Cloudflare details, make sure your route ends in a wildcard e.g. `route = "https://example.com/*"` and you have `workers_dev = false`.
-5. Run `wrangler kv:namespace create pages` and `wrangler kv:namespace create css` and paste the bindings into your `wrangler.toml`.
-6. Edit `content/index.md` file.
-7. From the `site` folder (or whatever you named it) run `workdown`
-8. Done!
+4. Configure `wrangler.toml` with your Cloudflare details and have `workers_dev = false`. 
+5. **Make sure** your route ends in a wildcard e.g. `route = "https://example.com/*"` 
+6. Run `wrangler kv:namespace create pages` and `wrangler kv:namespace create css` and paste the bindings into your `wrangler.toml`.
+7. Edit `content/index.md` file.
+8. From the `site` folder (or whatever you named it) run `workdown`
+9. Done!
 
 ## CSS
 CSS should go in the `css/` directory. They will be available as their full filename under `css`. For example if you make `main.css`, it will be `example.com/css/main.css`
@@ -24,6 +25,8 @@ Here is where you can customize the header and footer of pages in HTML. Currentl
 
 ## Notes
 The path for content will be the name of the markdown file with no extension. For example if you make `contact.md`, it will be `example.com/contact`.
+
+Also, Workers only work on (sub)domains proxied by Cloudflare. So make sure you have your domain that you used in your `wrangler.toml` path proxied.
 
 ## Install directly from Github
 `pip3 install git+https://github.com/eldridgea/workdown`
