@@ -28,10 +28,12 @@ The path for content will be the name of the markdown file with no extension. Fo
 
 Also, Workers only work on (sub)domains proxied by Cloudflare. So make sure you have your domain that you used in your `wrangler.toml` path proxied.
 
-## Install directly from Github
+## Alternative Instalattion Methods
+
+### Install directly from Github
 `pip3 install git+https://github.com/eldridgea/workdown`
 
-## Manual Install
+### Manual Install
 1. `git clone https://github.com/eldridgea/workdown`
 2. `cd workdown`
 3. `python3 setup.py install`
